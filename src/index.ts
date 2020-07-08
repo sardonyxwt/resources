@@ -2,26 +2,40 @@ const IMAGES_COUNT = 10;
 const AVATARS_COUNT = 30;
 const VIDEOS_COUNT = 1;
 
+const preparePathsArray = (
+    length: number,
+    reducer: (index: number) => string,
+) => {
+    const resultArray: string[] = [];
+    for (let i = 0; i < length; i++) {
+        resultArray.push(reducer(i));
+    }
+    return resultArray;
+};
+
 export const buildImagePaths = (
     baseDir = './node_modules/@sardonyxwt/resources/lib',
 ): string[] => {
-    return new Array(IMAGES_COUNT).map(
-        (_, i) => `${baseDir}/public/img/${i}.jpg`,
+    return preparePathsArray(
+        IMAGES_COUNT,
+        (i) => `${baseDir}/public/img/${i}.jpg`,
     );
 };
 
 export const buildAvatarPaths = (
     baseDir = './node_modules/@sardonyxwt/resources/lib',
 ): string[] => {
-    return new Array(AVATARS_COUNT).map(
-        (_, i) => `${baseDir}/public/img/avatar/avatar-${i}.jpg`,
+    return preparePathsArray(
+        AVATARS_COUNT,
+        (i) => `${baseDir}/public/img/avatar/avatar-${i}.jpg`,
     );
 };
 
 export const buildVideoPaths = (
     baseDir = './node_modules/@sardonyxwt/resources/lib',
 ): string[] => {
-    return new Array(VIDEOS_COUNT).map(
-        (_, i) => `${baseDir}/public/video/${i}.mp4`,
+    return preparePathsArray(
+        VIDEOS_COUNT,
+        (i) => `${baseDir}/public/video/${i}.mp4`,
     );
 };
