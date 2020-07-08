@@ -1,6 +1,6 @@
 {
     "name": "@sardonyxwt/resources",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Resources",
     "main": "lib/resources.cjs.js",
     "module": "lib/resources.esm.js",

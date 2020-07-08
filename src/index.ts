@@ -18,7 +18,7 @@ export const buildImagePaths = (
 ): string[] => {
     return preparePathsArray(
         IMAGES_COUNT,
-        (i) => `${baseDir}/public/img/${i}.jpg`,
+        (i) => `${baseDir}/public/img/${i + 1}.jpg`,
     );
 };
 
@@ -27,7 +27,7 @@ export const buildAvatarPaths = (
 ): string[] => {
     return preparePathsArray(
         AVATARS_COUNT,
-        (i) => `${baseDir}/public/img/avatar/avatar-${i}.jpg`,
+        (i) => `${baseDir}/public/img/avatar/avatar-${i + 1}.jpg`,
     );
 };
 
@@ -36,6 +36,6 @@ export const buildVideoPaths = (
 ): string[] => {
     return preparePathsArray(
         VIDEOS_COUNT,
-        (i) => `${baseDir}/public/video/${i}.mp4`,
+        (i) => `${baseDir}/public/video/${i + 1}.mp4`,
     );
 };
